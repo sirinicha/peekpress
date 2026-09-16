@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>향 — peekpress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<style>
+  :root{ --white:#ffffff; --black:#0a0a0a; --grey:#6b6b6b; --accent:#b8b8b8; --line:rgba(10,10,10,0.14); --margin:56px; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{ font-family:'Figtree',-apple-system,sans-serif; color:var(--black); background:var(--white); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .chrome-top{ display:flex; align-items:center; justify-content:space-between; padding:20px var(--margin); border-bottom:1px solid var(--line); }
+  .wordmark img{ height:20px; width:auto; display:block; }
+  .back-link{ font-size:0.9rem; font-weight:500; color:rgba(10,10,10,0.55); text-decoration:none; }
+  .back-link:hover{ color:var(--black); }
+
+  .band{ padding:64px var(--margin) 40px; background:var(--accent); }
+  .tag{ font-size:0.8rem; font-weight:700; letter-spacing:.03em; color:rgba(10,10,10,0.55); }
+  .culture{ font-size:clamp(2rem,6vw,3.2rem); font-weight:800; letter-spacing:-0.02em; margin-top:10px; color:var(--black); }
+  .desc{ font-size:1rem; color:rgba(10,10,10,0.75); margin-top:14px; max-width:58ch; }
+
+  main{ max-width:640px; margin:0 auto; padding:56px var(--margin) 96px; }
+
+  .toc-label{ font-size:0.85rem; font-weight:700; letter-spacing:.02em; color:var(--grey); margin-bottom:8px; }
+
+  .part{ margin-top:44px; }
+  .part:first-of-type{ margin-top:0; }
+  .part-num{ font-size:0.8rem; font-weight:700; color:var(--grey); letter-spacing:.02em; }
+  .part-title{ font-size:1.25rem; font-weight:800; margin-top:4px; }
+  .part-intro{ font-size:0.92rem; font-style:italic; color:rgba(10,10,10,0.6); margin-top:8px; max-width:56ch; }
+
+  .entry{ margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+  .entry-head{ display:flex; gap:14px; align-items:baseline; }
+  .entry-num{ font-size:0.85rem; font-weight:700; color:var(--grey); min-width:32px; flex-shrink:0; }
+  .entry-text{ font-size:0.98rem; font-weight:500; line-height:1.55; }
+  .entry-sub{ margin-top:6px; margin-left:46px; font-size:0.88rem; color:rgba(10,10,10,0.6); line-height:1.6; }
+  .entry-sub div{ margin-top:3px; }
+
+  @media (max-width:560px){ :root{ --margin:20px; } .entry-sub{ margin-left:0; } }
+</style>
+</head>
+<body>
+
+<div class="chrome-top">
+  <a class="wordmark" href="peekpress.html"><img src="logo.png" alt="peekpress"></a>
+  <a class="back-link" href="peekpress.html">← peekpress</a>
+</div>
+
+<header class="band">
+  <p class="tag">PEEK NOSE</p>
+  <h1 class="culture">향</h1>
+  <p class="desc">오감 중 후각에 대응하는 서브컬처인 '향'을 다룬다.</p>
+</header>
+
+<main>
+
+  <p class="toc-label">목차</p>
+
+  <div class="part">
+    <p class="part-num">PART 1</p>
+    <p class="part-title">후각과 향</p>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">1-1</span><span class="entry-text">후각의 과학적 비밀 — 후각 수용체에 대하여</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">1-2</span><span class="entry-text">없어지기 위해 만든 물건, '향'</span></div>
+    </div>
+  </div>
+
+  <div class="part">
+    <p class="part-num">PART 2</p>
+    <p class="part-title">향이 담기는 곳</p>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">2-1</span><span class="entry-text">향의 형태와 재료 — 선향·원목·반죽향 등</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">2-2</span><span class="entry-text">향이 만들어지는 과정 — 재료 → 배합 → 성형 → 건조 → 완성</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">2-3</span><span class="entry-text">숯으로 데워 쓰는 향, 'soradaki'</span></div>
+    </div>
+  </div>
+
+  <div class="part">
+    <p class="part-num">PART 3</p>
+    <p class="part-title">향이 머무는 곳</p>
+    <p class="part-intro">가장 개인적인 공간부터 공적 공간, 종교적 공간까지. 인센스와 함께하는 다양한 성격의 공간을 돌아보며 인센스를 사용하는 각자의 이유와 목적을 살펴본다.</p>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">3-1</span><span class="entry-text">집 — 개인별 인센스를 두는 자리와 이유 아카이브</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">3-2</span><span class="entry-text">피어싱·타투숍·편집샵 — 왜 인센스일까?</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">3-3</span><span class="entry-text">제사 — 넋을 기리는 향, 민화에 나온 향 리서치</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">3-4</span><span class="entry-text">요가원 — 향과 수행의 관계 (→ 절로 연결)</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">3-5</span><span class="entry-text">절 — 향을 피우는 의미, 현장 기록과 인터뷰</span></div>
+    </div>
+  </div>
+
+  <div class="part">
+    <p class="part-num">PART 4</p>
+    <p class="part-title">향이 떠난 뒤</p>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">4-1</span><span class="entry-text">향이 남긴 흔적 — 그을음·재·연기</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">4-2</span><span class="entry-text">블랙 솔트 레시피</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">4-3</span><span class="entry-text">블랙 솔트 글 아카이브 — 온라인의 영상·게시물·댓글 각색</span></div>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

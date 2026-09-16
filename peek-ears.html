@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전자음악 — peekpress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<style>
+  :root{ --white:#ffffff; --black:#0a0a0a; --grey:#6b6b6b; --accent:#22D8A4; --line:rgba(10,10,10,0.14); --margin:56px; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{ font-family:'Figtree',-apple-system,sans-serif; color:var(--black); background:var(--white); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .chrome-top{ display:flex; align-items:center; justify-content:space-between; padding:20px var(--margin); border-bottom:1px solid var(--line); }
+  .wordmark img{ height:20px; width:auto; display:block; }
+  .back-link{ font-size:0.9rem; font-weight:500; color:rgba(10,10,10,0.55); text-decoration:none; }
+  .back-link:hover{ color:var(--black); }
+
+  .band{ padding:64px var(--margin) 40px; background:var(--accent); }
+  .tag{ font-size:0.8rem; font-weight:700; letter-spacing:.03em; color:rgba(10,10,10,0.6); }
+  .culture{ font-size:clamp(2rem,6vw,3.2rem); font-weight:800; letter-spacing:-0.02em; margin-top:10px; color:var(--black); }
+  .credit{ font-size:0.85rem; color:rgba(10,10,10,0.6); margin-top:10px; }
+  .desc{ font-size:1rem; color:rgba(10,10,10,0.75); margin-top:14px; max-width:58ch; }
+
+  main{ max-width:640px; margin:0 auto; padding:56px var(--margin) 96px; }
+
+  .toc-label{ font-size:0.85rem; font-weight:700; letter-spacing:.02em; color:var(--grey); margin-bottom:8px; }
+
+  .part{ margin-top:44px; }
+  .part:first-of-type{ margin-top:0; }
+  .part-num{ font-size:0.8rem; font-weight:700; color:var(--accent); letter-spacing:.02em; }
+  .part-title{ font-size:1.25rem; font-weight:800; margin-top:4px; }
+  .part-intro{ font-size:0.92rem; font-style:italic; color:rgba(10,10,10,0.6); margin-top:8px; max-width:56ch; }
+
+  .entry{ margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+  .entry-head{ display:flex; gap:14px; align-items:baseline; }
+  .entry-num{ font-size:0.85rem; font-weight:700; color:var(--grey); min-width:32px; flex-shrink:0; }
+  .entry-text{ font-size:0.98rem; font-weight:500; line-height:1.55; }
+  .entry-sub{ margin-top:6px; margin-left:46px; font-size:0.88rem; color:rgba(10,10,10,0.6); line-height:1.6; }
+  .entry-sub div{ margin-top:3px; }
+
+  @media (max-width:560px){ :root{ --margin:20px; } .entry-sub{ margin-left:0; } }
+</style>
+</head>
+<body>
+
+<div class="chrome-top">
+  <a class="wordmark" href="peekpress.html"><img src="logo.png" alt="peekpress"></a>
+  <a class="back-link" href="peekpress.html">← peekpress</a>
+</div>
+
+<header class="band">
+  <p class="tag">PEEK EARS</p>
+  <h1 class="culture">전자음악</h1>
+  <p class="credit">글 — 여선주</p>
+  <p class="desc">오감 중 청각에 대응하는 서브컬처를 다룬다. 레이브, 테크노, 앰비언트, 그리고 그 곁의 곁들을 나란히 peek해본다.</p>
+</header>
+
+<main>
+
+  <p class="toc-label">목차</p>
+
+  <div class="part">
+    <p class="part-num">PART 1</p>
+    <p class="part-title">Rave</p>
+    <p class="part-intro">반체제 청년문화는 30년 만에 컨설팅 회사의 파티 옵션이 되었다. 레이브는 어디까지 희석될 수 있을까?</p>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">1-1</span><span class="entry-text">Original Rave와 레이브의 6가지 필수 조건. 청년 문화 운동으로서의 레이브</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">1-2</span><span class="entry-text">국내의 모닝 레이브(MMCA 사례) — 술과 약물을 빼고 시간대를 아침으로 옮긴 웰니스 레이빙</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">1-3</span><span class="entry-text">MGV@WORK, 기아의 채용설명회 — 기업 대상 상품으로서의 레이브</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">1-4</span><span class="entry-text">모든 조건이 사라진 레이브는 무엇이 남을까?</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">+</span><span class="entry-text">Seoul Raving Guide</span></div>
+      <div class="entry-sub">레이빙을 쉽게 즐길 수 있는 지역별 동선 추천과 팁 — 이태원, 홍대, 압구정</div>
+    </div>
+  </div>
+
+  <div class="part">
+    <p class="part-num">PART 2</p>
+    <p class="part-title">Techno</p>
+    <p class="part-intro">Techno in name only. 가짜 테크노와 진짜 테크노</p>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">2-1</span><span class="entry-text">Techno의 역사와 정의 가볍게 훑기</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">2-2</span><span class="entry-text">3번의 오해, 가짜 테크노</span></div>
+      <div class="entry-sub">
+        <div>1. 이정현의 와</div>
+        <div>2. 코요태의 순정</div>
+        <div>3. 신해철의 Crom's Techno Works</div>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">2-3</span><span class="entry-text">3번의 오해, 진짜 테크노 시도</span></div>
+      <div class="entry-sub">
+        <div>서태지와 아이들 (환상 속의 그대 part4와 수시아)</div>
+        <div>삐삐밴드의 이윤정 — 진화, 모하비의 테크노전자음악잡동사니</div>
+        <div>techno@kr</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="part">
+    <p class="part-num">PART 3</p>
+    <p class="part-title">Ambient</p>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">3-1</span><span class="entry-text">앰비언트의 기원</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">3-2</span><span class="entry-text">공항을 위한 음악과 실패</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">3-3</span><span class="entry-text">장례식을 위한 앰비언트 플레이리스트</span></div>
+    </div>
+  </div>
+
+  <div class="part">
+    <p class="part-num">PART 4</p>
+    <p class="part-title">Sound High</p>
+    <p class="part-intro">청각으로부터 시작되는 두 가지 사운드 하이</p>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">4-1</span><span class="entry-text">사운드 하이가 무엇인가</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">4-2</span><span class="entry-text">Entrainment, 박자에 뇌가 따라가는 길 — 일렉트로닉 음악에서의 뇌 동조 현상, 최면적인 리듬</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">4-3</span><span class="entry-text">Ambient, 박자를 지워 마음을 놓는 길 — 앰비언트에서 이완과 수면의 도움</span></div>
+      <div class="entry-sub"><div>국내 사례: 나우톤</div></div>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

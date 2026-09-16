@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>향신료 — peekpress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<style>
+  :root{ --white:#ffffff; --black:#0a0a0a; --grey:#6b6b6b; --accent:#6B2933; --line:rgba(10,10,10,0.14); --margin:56px; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{ font-family:'Figtree',-apple-system,sans-serif; color:var(--black); background:var(--white); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .chrome-top{ display:flex; align-items:center; justify-content:space-between; padding:20px var(--margin); border-bottom:1px solid var(--line); }
+  .wordmark img{ height:20px; width:auto; display:block; }
+  .back-link{ font-size:0.9rem; font-weight:500; color:rgba(10,10,10,0.55); text-decoration:none; }
+  .back-link:hover{ color:var(--black); }
+
+  .band{ padding:64px var(--margin) 40px; background:var(--accent); color:var(--white); }
+  .tag{ font-size:0.8rem; font-weight:700; letter-spacing:.03em; color:rgba(255,255,255,0.75); }
+  .culture{ font-size:clamp(2rem,6vw,3.2rem); font-weight:800; letter-spacing:-0.02em; margin-top:10px; color:var(--white); }
+  .desc{ font-size:1rem; color:rgba(255,255,255,0.85); margin-top:14px; max-width:58ch; }
+
+  main{ max-width:640px; margin:0 auto; padding:56px var(--margin) 96px; }
+
+  .toc-label{ font-size:0.85rem; font-weight:700; letter-spacing:.02em; color:var(--grey); margin-bottom:8px; }
+
+  .part{ margin-top:44px; }
+  .part:first-of-type{ margin-top:0; }
+  .part-num{ font-size:0.8rem; font-weight:700; color:var(--accent); letter-spacing:.02em; }
+  .part-title{ font-size:1.25rem; font-weight:800; margin-top:4px; }
+  .part-intro{ font-size:0.92rem; font-style:italic; color:rgba(10,10,10,0.6); margin-top:8px; max-width:56ch; }
+
+  .entry{ margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+  .entry-head{ display:flex; gap:14px; align-items:baseline; }
+  .entry-num{ font-size:0.85rem; font-weight:700; color:var(--grey); min-width:32px; flex-shrink:0; }
+  .entry-text{ font-size:0.98rem; font-weight:500; line-height:1.55; }
+  .entry-sub{ margin-top:6px; margin-left:46px; font-size:0.88rem; color:rgba(10,10,10,0.6); line-height:1.6; }
+  .entry-sub div{ margin-top:3px; }
+
+  @media (max-width:560px){ :root{ --margin:20px; } .entry-sub{ margin-left:0; } }
+</style>
+</head>
+<body>
+
+<div class="chrome-top">
+  <a class="wordmark" href="peekpress.html"><img src="logo.png" alt="peekpress"></a>
+  <a class="back-link" href="peekpress.html">← peekpress</a>
+</div>
+
+<header class="band">
+  <p class="tag">PEEK TONGUE</p>
+  <h1 class="culture">향신료</h1>
+  <p class="desc">오감 중 미각과 향신료에 관한 이야기를 나눈다. 여러 맛들이 우리의 식탁에 오기까지의 여러 이야기.</p>
+</header>
+
+<main>
+
+  <p class="toc-label">목차</p>
+
+  <div class="part">
+    <p class="part-num">PART 1</p>
+    <p class="part-title">Spice</p>
+    <p class="part-intro">향신료란 무엇인가? 확장되고 좁혀져 온 향신료의 범위</p>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">1-1</span><span class="entry-text">향신료와 spice, 각 나라 향신료의 어원 살펴보기</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">1-2</span><span class="entry-text">향신료의 역사와 발전 과정</span></div>
+    </div>
+  </div>
+
+  <div class="part">
+    <p class="part-num">PART 2</p>
+    <p class="part-title">다섯 가지 맛, 다섯 가지 향신료</p>
+    <p class="part-intro">짠맛, 단맛, 신맛, 쓴맛, 감칠맛 다섯 가지의 기본 미각과 특별한 향신료들</p>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">2-1</span><span class="entry-text">짠맛과 셀러리솔트</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">2-2</span><span class="entry-text">단맛과 마흘랍</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">2-3</span><span class="entry-text">신맛과 수막</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">2-4</span><span class="entry-text">쓴맛과 정향</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">2-5</span><span class="entry-text">감칠맛과 칼라나막</span></div>
+    </div>
+  </div>
+
+  <div class="part">
+    <p class="part-num">PART 3</p>
+    <p class="part-title">식탁에 오르기 전</p>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">3-1</span><span class="entry-text">[그래픽] 향신료 원물 식물의 모습과 가공된 향신료</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">3-2</span><span class="entry-text">식물의 활용 부위 — 씨앗, 껍질, 꽃, 열매, 줄기</span></div>
+    </div>
+  </div>
+
+  <div class="part">
+    <p class="part-num">PART 4</p>
+    <p class="part-title">주변의 향신료</p>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">4-1</span><span class="entry-text">[인터뷰] 이태원 식료품 가게 탐방</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-head"><span class="entry-num">4-2</span><span class="entry-text">[답사] 재래시장의 향신료</span></div>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

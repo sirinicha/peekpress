@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>peekpress</title>
+
+<!-- Google Fonts - Figtree -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --white:#ffffff;
+    --black:#0a0a0a;
+    --grey:#6b6b6b;
+    --blue:#096FEB;
+    --green:#22D8A4;
+    --pink:#FF7CCF;
+    --wine:#6B2933;
+    --line: rgba(10,10,10,0.14);
+    --margin: 56px;
+    --top-h: 64px;
+    --bottom-h: 56px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Figtree', -apple-system, sans-serif;
+    color:var(--black);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-top:var(--top-h);
+    padding-bottom:var(--bottom-h);
+  }
+
+  /* ---------- FIXED CHROME (top) ---------- */
+  .chrome-top{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    height:var(--top-h);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 var(--margin);
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+  }
+  .wordmark{ display:flex; align-items:center; }
+  .wordmark img{ height:22px; width:auto; display:block; }
+  .chrome-top .right{ display:flex; align-items:center; gap:28px; }
+  .tabs{ display:flex; gap:24px; }
+  .tab-btn{
+    background:none; border:none; cursor:pointer;
+    font-family:'Figtree', sans-serif;
+    font-size:0.92rem; font-weight:500;
+    color: rgba(10,10,10,0.42);
+    padding:2px 0;
+    transition: color .18s ease;
+  }
+  .tab-btn.active{ color:var(--black); font-weight:700; }
+  .tab-btn:hover{ color:var(--black); }
+  .icon-links{ display:flex; align-items:center; gap:18px; }
+  .icon-link{
+    display:flex; align-items:center; gap:6px;
+    color:rgba(10,10,10,0.55);
+    text-decoration:none;
+    font-size:0.85rem; font-weight:500;
+    transition: color .18s ease;
+  }
+  .icon-link svg{ width:15px; height:15px; }
+  .icon-link:hover{ color:var(--black); }
+
+  /* ---------- FIXED CHROME (bottom) ---------- */
+  .chrome-bottom{
+    position:fixed; bottom:0; left:0; right:0; z-index:100;
+    height:var(--bottom-h);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 var(--margin);
+    background:var(--white);
+    border-top:1px solid var(--line);
+  }
+  .chrome-bottom .tagline{
+    font-size:0.85rem; font-style:italic; color:rgba(10,10,10,0.6);
+    max-width:64ch;
+  }
+  .back-top{
+    background:none; border:none; cursor:pointer;
+    font-family:'Figtree', sans-serif;
+    font-size:0.85rem; font-weight:500;
+    color:rgba(10,10,10,0.55);
+    white-space:nowrap;
+    margin-left:16px;
+  }
+  .back-top:hover{ color:var(--black); }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;
+    min-height:calc(100vh - var(--top-h) - var(--bottom-h));
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    background:var(--blue);
+    color:var(--white);
+    padding: 0 var(--margin);
+  }
+  .hero-logo{
+    max-width: min(560px, 70vw);
+    width:100%;
+    height:auto;
+    opacity:0;
+    animation: rise .8s ease forwards;
+  }
+  .scroll-cue{
+    position:absolute;
+    bottom:32px; left:var(--margin);
+    font-size:0.85rem;
+    font-style:italic;
+    font-weight:400;
+    color:rgba(255,255,255,0.55);
+    opacity:0;
+    animation: rise .8s ease .3s forwards;
+  }
+  @keyframes rise{
+    from{ opacity:0; transform:translateY(14px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  /* ---------- LAYOUT ---------- */
+  main{ max-width:760px; margin:0 auto; padding: 88px var(--margin) 96px; }
+  .panel{ display:none; }
+  .panel.active{ display:block; animation: fade .4s ease; }
+  @keyframes fade{ from{opacity:0;} to{opacity:1;} }
+
+  .lede{
+    font-size:1.05rem;
+    font-weight:400;
+    max-width:56ch;
+    color:rgba(10,10,10,0.86);
+  }
+  .lede + .lede{ margin-top:20px; }
+  .lede.open{ font-size:1.2rem; font-weight:600; margin-bottom:36px; }
+
+  /* project header */
+  .project-tag{
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:0.03em;
+    color:var(--blue);
+    margin-bottom:14px;
+  }
+  .project-title{
+    font-size:clamp(1.7rem, 4vw, 2.35rem);
+    font-weight:700;
+    letter-spacing:-0.02em;
+    line-height:1.2;
+    margin-bottom:28px;
+  }
+
+  /* sense list */
+  .sense-list{
+    margin-top:32px;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:14px;
+  }
+  .sense-item{
+    display:flex; flex-direction:column; align-items:flex-start; text-align:left;
+    gap:6px;
+    padding:20px 22px;
+    border:1px solid var(--black);
+    border-radius:0;
+    text-decoration:none; color:inherit;
+    transition: background .12s ease, transform .1s ease;
+  }
+  .sense-item:hover{ background: rgba(10,10,10,0.04); }
+  .sense-item:active{ transform: scale(0.98); }
+  .sense-tag{
+    font-size:0.75rem;
+    font-weight:700;
+    letter-spacing:0.03em;
+    color: var(--grey);
+  }
+  .sense-culture{
+    font-size:1.15rem;
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  @media (max-width:560px){
+    .sense-list{ grid-template-columns: 1fr; }
+  }
+
+  /* PS */
+  .ps-block{ margin-top:56px; }
+  .ps-block p{ margin-top:16px; max-width:56ch; font-size:1.05rem; font-weight:400; color:rgba(10,10,10,0.86); }
+
+  @media (max-width:680px){
+    :root{ --margin:20px; --top-h:56px; --bottom-h:auto; }
+    .chrome-top{ padding:0 var(--margin); }
+    .icon-links{ gap:12px; }
+    .icon-link span{ display:none; }
+    .chrome-bottom{
+      position:fixed; height:auto; flex-direction:column; align-items:flex-start; gap:6px;
+      padding:12px var(--margin);
+    }
+    body{ padding-bottom:84px; }
+    .chrome-bottom .tagline{ max-width:100%; }
+    .back-top{ margin-left:0; }
+    main{ padding:64px var(--margin) 88px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="chrome-top">
+  <a class="wordmark" href="peekpress.html"><img src="logo.png" alt="peekpress"></a>
+  <div class="right">
+    <div class="tabs">
+      <button class="tab-btn" data-tab="about">소개</button>
+      <button class="tab-btn active" data-tab="project">프로젝트 기획</button>
+    </div>
+    <div class="icon-links">
+      <a class="icon-link" href="https://instagram.com/peek.press" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        <span>@peek.press</span>
+      </a>
+      <a class="icon-link" href="mailto:pp.peekpress@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        <span>Mail</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <img class="hero-logo" src="logo.png" alt="peekpress">
+  <div class="scroll-cue">scroll ↓</div>
+</header>
+
+<main>
+
+  <!-- 소개 -->
+  <section class="panel" id="panel-about">
+    <p class="lede open">peekpress는 독립 출판물을 제작하는 그래픽디자인 스튜디오입니다.</p>
+    <p class="lede">잘 알려지지 않았거나, 알려져 있어도 표면적인 이미지로만 소비되어 버린 문화들. 그 안에는 저마다 돌아가는 방식이 있다. peekpress는 이 문화들을 새로운 눈으로 들여다보고, 이야기해 볼 것들을 고른다.</p>
+    <p class="lede">조사부터 출판까지, 창작과 운영의 전 과정을 진행하며, peekpress가 직접 만들고 펴낸다.</p>
+  </section>
+
+  <!-- 프로젝트 기획 -->
+  <section class="panel active" id="panel-project">
+    <p class="project-tag">PEEK SENSE</p>
+    <h2 class="project-title">하위문화, 다섯 가지 감각으로</h2>
+
+    <p class="lede">peekpress의 첫 번째 매거진 시리즈. 하위문화를 다섯 가지 감각으로 펼쳐낸다. 시각 — 그래피티, 청각 — 전자음악, 촉각 — 피어싱, 미각 — 향신료, 후각 — 향, 이렇게 다섯 가지 주제를 소개한다.</p>
+    <p class="lede">하위문화는 왜 늘 겉모습으로만 소비될까? peek sense는 이 질문에서 출발한 오감 기반 독립 출판 시리즈다. 감각은 문화가 몸에 들어오는 첫 번째 통로이기에, 시각·청각·미각·촉각·후각 다섯 감각당 하나의 하위문화를 대응시키고 감각마다 한 권씩, 총 다섯 권을 펴낸다.</p>
+    <p class="lede">peekpress는 이 다섯 감각을 통로 삼아 국내에서 이 문화들이 어떻게 형성되고 있는지 직접 찾아가 취재한다. 그 안에서 활동하는 사람들을 인터뷰하고 현장을 경험하며, 글과 그래픽으로 그 문화를 책에 옮긴다.</p>
+
+    <div class="sense-list">
+
+      <a class="sense-item" href="peek-eyes.html">
+        <span class="sense-tag">PEEK EYES</span>
+        <span class="sense-culture">그래피티</span>
+      </a>
+
+      <a class="sense-item" href="peek-ears.html">
+        <span class="sense-tag">PEEK EARS</span>
+        <span class="sense-culture">전자음악</span>
+      </a>
+
+      <a class="sense-item" href="peek-tongue.html">
+        <span class="sense-tag">PEEK TONGUE</span>
+        <span class="sense-culture">향신료</span>
+      </a>
+
+      <a class="sense-item" href="peek-skin.html">
+        <span class="sense-tag">PEEK SKIN</span>
+        <span class="sense-culture">피어싱</span>
+      </a>
+
+      <a class="sense-item" href="peek-nose.html">
+        <span class="sense-tag">PEEK NOSE</span>
+        <span class="sense-culture">향</span>
+      </a>
+
+    </div>
+
+    <div class="ps-block">
+      <p>다섯 권을 다 지은 뒤에는, 미처 담지 못한 이야기를 더해 하나로 엮은 합본 P.S.를 더한다. 흩어져 있던 다섯 감각이 결국 한 몸 안에서 통합되듯, P.S.는 다섯 문화를 하나로 엮는다. P.S.는 다섯 권의 책을 그대로 스캔하여 하나의 판형 안에 담고, 각 권에서 미처 다루지 못했던 이야기들을 페이지 옆에 덧붙이는 방식으로 구성된다.</p>
+      <p>그렇게 완성되는 여섯 권은 정보 전달을 넘어, 다양한 감상자가 각자의 자리에서 읽어낼 수 있는 다각적인 경험을 지향한다.</p>
+    </div>
+
+  </section>
+
+</main>
+
+<div class="chrome-bottom">
+  <p class="tagline">peekpress는 독립 출판물을 제작하는 그래픽디자인 스튜디오입니다.</p>
+  <button class="back-top" id="backTop">위로 ↑</button>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.panel');
+  buttons.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      buttons.forEach(b=>b.classList.remove('active'));
+      panels.forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+  document.getElementById('backTop').addEventListener('click', ()=>{
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+</script>
+
+</body>
+</html>
